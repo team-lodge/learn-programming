@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>簡易抽選システム</title>
+    <style>
+        input {
+            width: 50%;
+            padding: 5px;
+            margin: 5px;
+            font-size: 2em;
+        }
+    </style>
+</head>
+<body>
+<h1>簡易抽選システム</h1>
+
+<form name="form1">
+    <fieldset>
+        <legend>応募者N人中、M人を選ぶ</legend>
+        <p><label>応募者一覧（カンマ区切りで入力）<input type="text" name="names"></label></p>
+        <p><label>当選者数<input type="text" name="num"></label></p>
+
+    </fieldset>
+    <button type="button" id="submit">抽選する</button>
+</form>
+
+<div>
+    <h2>当選者一覧</h2>
+    <div id="js-list"></div>
+</div>
+<script type="text/javascript" src="script.js"></script>
+</body>
+</html>
