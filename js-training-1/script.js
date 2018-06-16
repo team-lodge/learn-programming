@@ -13,6 +13,20 @@ window.onload = function () {
     const count = form.num.value;
     let winners = [];
 
+    if (names == "") {
+      let alert = document.getElementById('alert');
+      let li = document.createElement('li');
+      li.innerText = "応募者を入力してください。"
+      alert.appendChild(li)
+    }
+
+    if (count == 0) {
+      let alert = document.getElementById('alert');
+      let li = document.createElement('li');
+      li.innerText = "当選者数を入力してください。"
+      alert.appendChild(li)
+    }
+
     // 指定された当選者数分だけ for で回す
     for (let i = 0; i < count; i++) {
       if (i > orig_list) {
