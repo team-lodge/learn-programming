@@ -67,7 +67,7 @@ function validation(list, count) {
     alert.appendChild(li);
   }
 
-  if (count == 0) {
+  if (count < 1) {
     let li = document.createElement('li');
     li.innerText = '当選者数を入力してください';
     alert.appendChild(li);
