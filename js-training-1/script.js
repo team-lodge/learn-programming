@@ -6,11 +6,9 @@ function chooseMember() {
 
   const count = form.num.value;
 
-  if (names === '' || count < 1) {
-    return false;
-  }
-
   let winners = [];
+
+  validation(list, count);
 
   // 指定された当選者数分だけ for で回す
   for (let i = 0; i < count; i++) {
@@ -47,4 +45,29 @@ function output(winners) {
   }
 
   elem.appendChild(ul);
+}
+
+/**
+ * バリデーション
+ * @param list Array 応募者一覧
+ * @param count Int 当選者数
+ */
+function validation(list, count) {
+  let alert = document.getElementById('alert');
+  alert.innerText = '';
+  if (JSON.stringify(list) === JSON.stringify([""])) {
+    let li = document.createElement('li');
+    li.innerText = '応募者を入力してください';
+    alert.appendChild(li);
+
+    return false;
+  }
+
+  if (count < 1) {
+    let li = document.createElement('li');
+    li.innerText = '当選者数を入力してください';
+    alert.appendChild(li);
+
+    return false;
+  }
 }
