@@ -1,37 +1,35 @@
-window.onload = function () {
-  const submit_button = document.getElementById('submit');
+function chooseMember() {
+  const form = document.form1;
+  const names = form.names.value;
+  const orig_list = names.split(',');
+  let list = orig_list;
 
-  /**
-   * フォーム内のボタンをイベントリスナーに登録し、クリックを監視
-   */
-  submit_button.addEventListener('click', function () {
-    const form = document.form1;
-    const names = form.names.value;
-    const orig_list = names.split(',');
-    let list = orig_list;
+  const count = form.num.value;
 
-    const count = form.num.value;
-    let winners = [];
+  if (names === '' || count < 1) {
+    return false;
+  }
 
-    // 指定された当選者数分だけ for で回す
-    for (let i = 0; i < count; i++) {
-      if (i > orig_list) {
-        break;
-      }
-      /**
-       * 乱数の取得に関して、このサイトがわかりやすいです。
-       * https://www.sejuku.net/blog/22432
-       */
-      const chosen_index = Math.floor(Math.random() * list.length);
-      // 当選者を当選者用配列に詰める
-      winners.push(list[chosen_index]);
+  let winners = [];
 
-      // 応募者リストから、当選したメンバーを除外する
-      list.splice(chosen_index, 1);
+  // 指定された当選者数分だけ for で回す
+  for (let i = 0; i < count; i++) {
+    if (i > orig_list) {
+      break;
     }
-    output(winners);
-  });
-};
+    /**
+     * 乱数の取得に関して、このサイトがわかりやすいです。
+     * https://www.sejuku.net/blog/22432
+     */
+    const chosen_index = Math.floor(Math.random() * list.length);
+    // 当選者を当選者用配列に詰める
+    winners.push(list[chosen_index]);
+
+    // 応募者リストから、当選したメンバーを除外する
+    list.splice(chosen_index, 1);
+  }
+  output(winners);
+}
 
 /**
  * HTML タグを生成して出力する
