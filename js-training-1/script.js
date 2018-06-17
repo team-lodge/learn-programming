@@ -13,7 +13,7 @@ window.onload = function () {
     const count = form.num.value;
     let winners = [];
 
-    validation(list, count)
+    validation(list, count);
 
     // 指定された当選者数分だけ for で回す
     for (let i = 0; i < count; i++) {
@@ -60,15 +60,16 @@ function output(winners) {
  */
 function validation(list, count) {
   let alert = document.getElementById('alert');
-  if (list == '') {
+  alert.innerText = '';
+  if (JSON.stringify(list) === JSON.stringify([""])) {
     let li = document.createElement('li');
-    li.innerText = '応募者を入力してください'
+    li.innerText = '応募者を入力してください';
     alert.appendChild(li);
   }
 
   if (count == 0) {
     let li = document.createElement('li');
-    li.innerText = '当選者数を入力してください'
+    li.innerText = '当選者数を入力してください';
     alert.appendChild(li);
   }
 }
