@@ -79,7 +79,7 @@ function output(winners) {
 function validation(list, count) {
   let alert = document.getElementById('alert');
   alert.innerText = '';
-  if (JSON.stringify(list) === JSON.stringify([""])) {
+  if (list.length === 0) {
     let li = document.createElement('li');
     li.innerText = '応募者を入力してください';
     alert.appendChild(li);
