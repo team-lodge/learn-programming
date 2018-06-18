@@ -16,14 +16,14 @@
 <h1>簡易抽選システム</h1>
 <ul id="alert"></ul>
 
-<form name="form1">
+<form name="form1" onsubmit="chooseMember();return false;">
     <fieldset>
         <legend>応募者N人中、M人を選ぶ</legend>
-        <p><label>応募者一覧（カンマ区切りで入力）<input type="text" name="names"></label></p>
-        <p><label>当選者数<input type="text" name="num"></label></p>
+        <p><label>応募者一覧（カンマ区切りで入力）<input type="text" name="names" placeholder="Aさん,Bさん,Cさん" required></label></p>
+        <p><label>当選者数<input type="number" name="num" min="1" value="1" required></label></p>
 
     </fieldset>
-    <button type="button" id="submit">抽選する</button>
+    <button type="submit" id="submit">抽選する</button>
 </form>
 
 <div>
