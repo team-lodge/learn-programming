@@ -2,26 +2,26 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <title>簡易抽選システム</title>
+    <title>チーム分け</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<h1>簡易抽選システム</h1>
+<h1>チーム分け</h1>
 <ul id="alert"></ul>
 
 <form name="form1" onsubmit="chooseMember();return false;">
     <fieldset>
-        <legend>応募者N人中、M人を選ぶ</legend>
-        <p><label>応募者一覧</label></p>
+        <legend>参加者N人中、M人のチームに分ける</legend>
+        <p><label>参加者一覧</label></p>
         <textarea name="names" placeholder="改行区切りで名前を入力" required></textarea>
-        <p><label>当選者数<input type="number" name="num" min="1" value="1" required></label></p>
+        <p><label>チームあたりの人数<input type="number" name="num" min="1" value="1" required></label></p>
 
     </fieldset>
-    <button type="submit" id="submit">抽選する</button>
+    <button type="submit" id="submit">実行</button>
 </form>
 
 <div>
-    <h2>グループ分け</h2>
+    <h2>チーム分け結果</h2>
     <div id="js-list"></div>
 </div>
 <script type="text/javascript" src="script.js"></script>
