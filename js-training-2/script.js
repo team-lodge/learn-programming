@@ -119,5 +119,13 @@ function validation(list, count) {
     return false;
   }
 
+  if (list.length < count) {
+    let li = document.createElement('li');
+    li.innerText = '適切なグループ数を入力してください';
+    alert.appendChild(li);
+
+    return false;
+  }
+
   return true;
 }
