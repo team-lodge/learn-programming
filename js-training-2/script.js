@@ -84,14 +84,14 @@ function output(winners) {
   let elem = document.getElementById('js-list');
   elem.innerText = '';
 
-  let ul = document.createElement('ul');
+  let ol = document.createElement('ol');
   for(let i = 0; i < winners.length; i++) {
     let li = document.createElement('li');
     li.innerText = winners[i];
-    ul.appendChild(li);
+    ol.appendChild(li);
   }
 
-  elem.appendChild(ul);
+  elem.appendChild(ol);
 }
 
 /**
