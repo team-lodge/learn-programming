@@ -5,14 +5,8 @@ function chooseMember() {
   const form = document.form1;
   const names = form.names.value;
   const orig_list = names.split('\n');
-  const base_list = removeEmptyStringValueFromArray(orig_list);
-  // 値渡しにする
-  let list = base_list.slice(0, base_list.length);
+  let list = removeEmptyStringValueFromArray(orig_list);
 
-  console.log(orig_list);
-  console.log(base_list);
-
-  // フォーム内の不要なカンマを削除する
   form.names.value = list.join('\n');
   const count = form.num.value;
   let winners = [];
@@ -33,7 +27,7 @@ function chooseMember() {
         // 当選者を当選者用配列に詰める
         members.push(list[chosen_index]);
 
-        // 応募者リストから、当選したメンバーを除外する
+        // 参加者リストから、選んだメンバーを除外する
         list.splice(chosen_index, 1);
       }
 
@@ -43,6 +37,12 @@ function chooseMember() {
   }
 }
 
+/**
+ * チームごとの人数の配列を返す
+ * @param {Number} group_num - チーム数
+ * @param {Number} total - 合計人数
+ * @returns {Array} - チームごとの人数の配列
+ */
 function getGroupMembers(group_num, total) {
   let surplus = total % group_num;
   let group_members = Math.floor(total / group_num);
