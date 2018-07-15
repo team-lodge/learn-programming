@@ -1,0 +1,11 @@
+input {
+  width: 50%;
+  padding: 5px;
+  margin: 5px;
+  font-size: 2em;
+}
+
+textarea {
+  width: 30%;
+  height: 10em;
+}
