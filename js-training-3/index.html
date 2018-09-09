@@ -13,6 +13,7 @@
 <form id="form">
     <fieldset>
         <legend>参加者N人中、M人のチームに分ける</legend>
+        <p><label>参加者一覧</label></p>
         <textarea v-model="input" placeholder="改行区切りで名前を入力" required></textarea>
         <p><label>チームあたりの人数<input v-model.number="count" min="1" value="1" required></label></p>
     </fieldset>
