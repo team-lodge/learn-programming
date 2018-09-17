@@ -59,12 +59,12 @@ let form = new Vue({
      * @returns {boolean}
      */
     validation: function (list, count) {
-      let alert = document.getElementById('alert');
-      alert.innerText = '';
+      let notifications = document.getElementById('notifications');
+      notifications.innerText = '';
       if (list.length === 0) {
         let li = document.createElement('li');
         li.innerText = '応募者を入力してください';
-        alert.appendChild(li);
+        notifications.appendChild(li);
 
         return false;
       }
@@ -72,7 +72,7 @@ let form = new Vue({
       if (count < 1) {
         let li = document.createElement('li');
         li.innerText = '当選者数を入力してください';
-        alert.appendChild(li);
+        notifications.appendChild(li);
 
         return false;
       }
@@ -80,7 +80,7 @@ let form = new Vue({
       if (list.length < count) {
         let li = document.createElement('li');
         li.innerText = '適切なグループ数を入力してください';
-        alert.appendChild(li);
+        notifications.appendChild(li);
 
         return false;
       }

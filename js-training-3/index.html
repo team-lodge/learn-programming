@@ -8,7 +8,7 @@
 </head>
 <body>
 <h1>チーム分け</h1>
-<ul id="alert"></ul>
+<ul id="notifications"></ul>
 
 <form id="form">
     <fieldset>
@@ -18,12 +18,12 @@
         <p><label>チームあたりの人数<input v-model.number="count" min="1" value="1" required></label></p>
     </fieldset>
     <button @click="member_list()" onclick="return false">実行</button>
-
-    <div>
-      <h2>チーム分け結果</h2>
-      <div id="js-list"></div>
-    </div>
 </form>
+
+<div>
+    <h2>チーム分け結果</h2>
+    <div id="js-list"></div>
+</div>
 
 <script type="text/javascript" src="script.js"></script>
 </body>
