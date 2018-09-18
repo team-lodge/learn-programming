@@ -17,7 +17,7 @@
         <textarea v-model="input" placeholder="改行区切りで名前を入力" required></textarea>
         <p><label>チームあたりの人数<input v-model.number="count" min="1" value="1" required></label></p>
     </fieldset>
-    <button @click="member_list()" onclick="return false">実行</button>
+    <button @click="member_list()" type="button">実行</button>
 </form>
 
 <div>
