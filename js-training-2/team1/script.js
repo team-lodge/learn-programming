@@ -2,13 +2,20 @@
  * メンバーを抽選する
  */
 function chooseMember() {
+  /* formタグ */
   const form = document.form1;
+  /* 参加者一覧入力値 */
   const names = form.names.value;
+  /* 参加者一覧配列 */
   const orig_list = names.split('\n');
+  /* 参加者一覧空欄削除 */
   let list = removeEmptyStringValueFromArray(orig_list);
-
+  /* 空欄無し参加者を再度参加者に入れる */
   form.names.value = list.join('\n');
+  /* チーム数 */
   const count = form.num.value;
+  console.log(count);
+  /* htmlタグを生成する */
   let winners = [];
 
   if (validation(list, count)) {
