@@ -2,14 +2,26 @@
  * メンバーを抽選する
  */
 function chooseMember() {
+  /* formタグを取得 */
   const form = document.form1;
+  /* 参加者一覧を取得 */
   const names = form.names.value;
+  /* 参加者一覧を配列にする */
   const orig_list = names.split('\n');
+  /* 参加者一覧から空の要素をとる */
   let list = removeEmptyStringValueFromArray(orig_list);
-
+  /* 参加者一覧をフォームに返す */
   form.names.value = list.join('\n');
+  /* チーム数 */
   const count = form.num.value;
+  /* チーム分け結果 */
   let winners = [];
+  /* sub-titleの取得 */
+  const subtitle = document.getElementById('sub_title');
+  /* 参加者数 */
+  let participants_num = list.length;
+  /* チーム数・参加者数をサブタイトルに表示 */
+  subtitle.innerHTML = "参加者" + participants_num + "人中、" + count + "チームに分ける";
 
   if (validation(list, count)) {
     const group_array = getGroupMembers(count, list.length);

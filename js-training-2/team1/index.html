@@ -11,10 +11,10 @@
 
 <form name="form1" onsubmit="chooseMember();return false;">
     <fieldset>
-        <legend>参加者N人中、M人のチームに分ける</legend>
+        <legend id="sub_title">参加者N人をMチームに分ける</legend>
         <p><label>参加者一覧</label></p>
         <textarea name="names" placeholder="改行区切りで名前を入力" required></textarea>
-        <p><label>チームあたりの人数<input type="number" name="num" min="1" value="1" required></label></p>
+        <p><label>チーム数<input type="number" name="num" min="1" value="1" required></label></p>
 
     </fieldset>
     <button type="submit" id="submit">実行</button>
